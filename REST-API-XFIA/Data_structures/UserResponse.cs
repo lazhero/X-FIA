@@ -7,6 +7,7 @@
         public string TeamsLogo { get; set; } = null!;
         public string CountryName { get; set; } = null!;
         public string? PrivateLeagueName { get; set; }
+        public virtual SQL_Model.Models.Country CountryNameNavigation { get; set; } = null!;
         public virtual List<Data_structures.SubTeam> Subteams { get; set;}
     }
 }

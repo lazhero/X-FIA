@@ -55,6 +55,9 @@ namespace REST_API_XFIA.Modules.Mappers
             response.Username = user.Username;
             response.TeamsName = user.TeamsName;
             response.CountryName = user.CountryName;
+            response.CountryNameNavigation = user.CountryNameNavigation;
+            response.CountryNameNavigation.Users = null;
+            response.CountryNameNavigation.Pilots = null;
             response.PrivateLeagueName = user.PrivateLeagueName;
             response.TeamsLogo = user.TeamsLogo;
             response.Subteams = new List<Data_structures.SubTeam>();
@@ -71,23 +74,18 @@ namespace REST_API_XFIA.Modules.Mappers
                 temp.CreationDate = subteam.CreationDate;
 
                 var pilot1 = subteam.HasPilots.ToList()[0].Pilot;
-                pilot1.RealTeamsNameNavigation = null;
                 pilot1.HasPilots = null;
 
                 var pilot2 = subteam.HasPilots.ToList()[1].Pilot;
-                pilot2.RealTeamsNameNavigation = null;
                 pilot2.HasPilots = null;
 
                 var pilot3 = subteam.HasPilots.ToList()[2].Pilot;
-                pilot3.RealTeamsNameNavigation = null;
                 pilot3.HasPilots = null;
 
                 var pilot4 = subteam.HasPilots.ToList()[3].Pilot;
-                pilot4.RealTeamsNameNavigation = null;
                 pilot4.HasPilots = null;
 
                 var pilot5 = subteam.HasPilots.ToList()[4].Pilot;
-                pilot5.RealTeamsNameNavigation = null;
                 pilot5.HasPilots = null;
 
                 temp.Pilots.Add(pilot1);

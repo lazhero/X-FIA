@@ -38,11 +38,11 @@ namespace REST_API_XFIA.Controllers
         {
             try
             {
-                var User = Db.Users.Where(U => U.Email == userEmail).Single();
+                var User = Db.Users.Include(U => U.CountryNameNavigation).Where(U => U.Email == userEmail).Single();
                 var res = UserMapper.fillUserResponse(User, SubTeamFetcher.getSubTeamsLatest(userEmail));
 
                 return Ok(JsonConvert.SerializeObject(res, Formatting.Indented,
-                            new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects })
+                            new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore })
                          );
             }
             catch (Exception e)
