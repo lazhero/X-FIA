@@ -80,7 +80,5 @@ namespace REST_API_XFIA.Controllers
                 return BadRequest(4);
             }
         }
-        
-
     }
 }

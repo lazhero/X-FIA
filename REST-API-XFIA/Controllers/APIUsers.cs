@@ -5,6 +5,7 @@ using REST_API_XFIA.SQL_Model.DB_Context;
 using REST_API_XFIA.Modules.BuisnessRules;
 using REST_API_XFIA.Modules.Mappers;
 using REST_API_XFIA.Modules.Service;
+using REST_API_XFIA.Modules.Fetcher;
 
 namespace REST_API_XFIA.Controllers
 {
@@ -25,6 +26,24 @@ namespace REST_API_XFIA.Controllers
             try
             {
                 return Ok(Db.Users.ToList());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(4);
+            }
+        }
+        [Route("Unico")]
+        [HttpGet]
+        public ActionResult GetUsers(string userEmail)
+        {
+            try
+            {
+                var User = Db.Users.Where(U => U.Email == userEmail).Single();
+                var res = UserMapper.fillUserResponse(User, SubTeamFetcher.getSubTeamsLatest(userEmail));
+
+                return Ok(JsonConvert.SerializeObject(res, Formatting.Indented,
+                            new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects })
+                         );
             }
             catch (Exception e)
             {
@@ -75,7 +94,6 @@ namespace REST_API_XFIA.Controllers
             {
                 return BadRequest(4);
             }
-            
         }
     }
 }
