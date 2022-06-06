@@ -14,6 +14,9 @@ namespace REST_API_XFIA.Modules.Fetcher
                                       .Include(St=>St.HasPilots)
                                       .ThenInclude(HP=>HP.Pilot)
                                       .ThenInclude(P=>P.CountryNameNavigation)
+                                      .Include(St => St.HasPilots)
+                                      .ThenInclude(HP => HP.Pilot)
+                                      .ThenInclude(P=>P.RealTeamsNameNavigation)
                                       .Where(St => 
                                                 St.UserEmail == userEmail && 
                                                 Tempsubteams[0].CreationDate == St.CreationDate
