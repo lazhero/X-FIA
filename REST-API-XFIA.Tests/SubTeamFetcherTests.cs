@@ -11,9 +11,9 @@ namespace REST_API_XFIA.Tests
     public class FetcherTests
     {
         [Fact]
-        public void GetActiveOrFutureTournamentTest() {
-            var tour = TournamentFetcher.GetActiveTournament();
-            Assert.True(tour.InitialDate > DateTime.Today || (tour.InitialDate == DateTime.Today && tour.InitialHour >= DateTime.Now.TimeOfDay));
+        public void getSubTeamsLatestTest() {
+            var tour = SubTeamFetcher.getSubTeamsLatest("briwag88@hotmail.com");
+            Assert.True(tour[0].Name.Equals("Equipo Supermega Corredor") || tour[1].Name.Equals("Equipo Malos Corredores"));
         }
     }
 

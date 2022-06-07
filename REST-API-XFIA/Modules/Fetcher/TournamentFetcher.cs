@@ -36,10 +36,10 @@ namespace REST_API_XFIA.Modules.Fetcher
             return res;
         }
 
-        public static SQL_Model.Models.Tournament GetTournament(string tournamentKey)
+        public static SQL_Model.Models.Tournament GetTournament(string tournamentKey = "")
         {
             SQL_Model.Models.Tournament tour;
-            if (tournamentKey == null)
+            if (tournamentKey == null || tournamentKey.Equals(""))
             {
                 tour = TournamentFetcher.GetActiveTournament();
                 tour = Db.Tournaments.Include(t => t.UserEmails)
