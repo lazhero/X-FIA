@@ -21,7 +21,7 @@ export class appSettings{
     public static tournamentRaces='';
     public static profileUserGet="Usuario/Unico";
     public static loginRoute='Usuario/Login';
-    public static defaultPilotPhotoRoute="../../../../assets/images/pilotAvatar.png";
+    public static defaultPilotPhotoRoute="C:\\Users\\briwa\\Documents\\Github\\X-FIA\\REST-API-XFIA\\bin\\Debug\\net6.0\\Files\\Images\\pilotAvatar.png";
     public static defaultTeamPhoto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzA0-6IViHaCiSlUgHkF0FPlVgwoH2WydjxA&usqp=CAU";
     public static defaultCountryPhoto="http://cdn.onlinewebfonts.com/svg/img_456271.png";
     public static defaultPilotName="Piloto"

@@ -76,8 +76,8 @@ export class RegisterTeamComponent implements OnInit {
     this.availablePilots=[];
     this.availableCars=[];
     this.currentImage=appSettings.defaultPilotPhotoRoute;
-    this.currentCountryImage=appSettings.defaultCountryPhoto;
-    this.currentTeamImage=appSettings.defaultTeamPhoto;
+    this.currentCountryImage="C:\\Users\\briwa\\Documents\\Github\\X-FIA\\REST-API-XFIA\\bin\\Debug\\net6.0\\Files\\Images\\defaultTeamFoto.jpg";
+    this.currentTeamImage="C:\\Users\\briwa\\Documents\\Github\\X-FIA\\REST-API-XFIA\\bin\\Debug\\net6.0\\Files\\Images\\defaultTeamPhoto.jpg";
     
     
     this.currentName=appSettings.defaultPilotName;
@@ -151,8 +151,6 @@ export class RegisterTeamComponent implements OnInit {
         this.currentPrice=this.selectedCar.Price;
       }
     }
-    
-    
   }
   /*
   input:none

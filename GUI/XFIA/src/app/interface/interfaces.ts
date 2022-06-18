@@ -17,7 +17,7 @@ export interface raceInterface{
 }
 //interface that represents the pilot 
 export interface pilotInterface{
-    Id:number;
+    Id:string;
     Firstname:string;
     Lastname:string;
     Photo:string;

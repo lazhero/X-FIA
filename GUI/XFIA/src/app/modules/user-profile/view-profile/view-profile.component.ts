@@ -48,7 +48,7 @@ export class ViewProfileComponent implements OnInit {
   defaultData(){
     this.username="Username";
     this.teamName="Equipo";
-    this.teamLogo="https://thumbs.dreamstime.com/b/grupo-colorido-team-logo-design-symbol-illustration-de-la-gente-124513112.jpg"
+    this.teamLogo="C:\\Users\\briwa\\Documents\\Github\\X-FIA\\REST-API-XFIA\\bin\\Debug\\net6.0\\Files\\Images"
     this.subteam1Name='Equipo 1';
     this.subteam2Name="Equipo 2";
     this.pilots1=[];
